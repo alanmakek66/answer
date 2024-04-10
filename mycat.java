@@ -13,7 +13,7 @@ public class mycat {
     this.Age=x;
   }
   public String toString(){
-    return "fatcat("+"Variety = "+this.Variety
+    return "mycat("+"Variety = "+this.Variety
     +" Color = "+this.Color+" Age = "+this.Age;
   }
 
