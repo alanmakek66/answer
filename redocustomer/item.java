@@ -1,36 +1,52 @@
 package redocustomer;
+
+import java.math.BigDecimal;
 import java.util.Arrays;
 
 public class item {
-  private double price;
+  private String itemName;
+  private Double itemprice;
   private int quantity;
-  private String desc; //refer to describe;
 
-  public item(String desc,double price,int quantity){
-    this.desc=desc;
-    this.price=price;
-    this.quantity=quantity;
+  public item(String name, double price, int quantity) {
+    this.itemName = name;
+    this.itemprice = price;
+    this.quantity = quantity;
   }
 
   public String toString() {
-    return "Item(" //
-        + "description=" + this.desc //
-        + ", price=" + this.price //
-        + ", quantity=" + this.quantity //
-        + ")";
+    return "name = " + this.itemName +
+        " price = " + this.itemprice + " quantity = " + this.quantity;
+  }
+
+  public double subtotal() {
+    return BigDecimal.valueOf(this.itemprice) //
+        .multiply(BigDecimal.valueOf(this.quantity)) //
+        .doubleValue();
   }
 
   public static void main(String[] args) {
-    item item1=new item("apple", 4.5, 2);
-    item itme2=new item("orange", 3.5, 3);
-    item[] items=new item[2];
-    items[0]=item1;
-    items[1]=itme2;
-    order order1=new order("v000022", items);
+    item item1 = new item("apple", 4.3, 3);
+    item item2 = new item("banana", 3.2, 4);
+    item item3 = new item("cola", 7.5, 10);
 
-    order [] orders=new order[1];
-    orders[0]=order1;
-    customer c=new customer("sallychan", orders);
+    order order1 = new order("v001");
+    order1.add(item3);
+    order1.add(item2);
+    order1.add(item1);
+
+    System.out.println(order1.toString());
+    //System.out.println(item1.subtotal());
+    //BigDecimal
+
+    System.out.println(order1.total());
+
+    customer c1=new customer("peter");
+    c1.add(order1);
+    System.out.println(c1.toString());
+    //System.out.println(order1.isFreeship());
+    
+
   }
-  
+
 }
