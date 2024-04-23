@@ -9,5 +9,9 @@ public class superman extends man {
   public void superpower(){
     System.out.println("i am rich");
   }
+
+  public void fly(){
+    System.out.println("i am fly");
+  }
   
 }

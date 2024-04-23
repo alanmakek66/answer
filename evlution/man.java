@@ -1,5 +1,8 @@
 package evlution;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public abstract class man {
   private String name;
   private double weight;
@@ -18,6 +21,9 @@ public abstract class man {
   public static void main(String[] args) {
     //man m1=new man();
     man m1=new superman(null, 0);
+    //m1.fly();
+    //Map m1=new HashMap<>()
+    
   }
 
   

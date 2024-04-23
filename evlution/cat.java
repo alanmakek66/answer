@@ -9,6 +9,7 @@ public interface cat {
   public static void main(String[] args) {
     cat c1=new supercat();
     c1.run();
+    //c1.fly();
       
     }
   }

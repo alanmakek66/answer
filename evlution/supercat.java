@@ -8,5 +8,9 @@ public class supercat implements cat {
   public void run(){
     System.out.println("i am running");
   }
+
+  public void fly(){
+    System.out.println("i am fly");
+  }
   
 }
