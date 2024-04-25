@@ -53,8 +53,11 @@ public class orderbook2 {
       .getquantity());
 
       int value=Math.abs(this.getMap().get(this.getArrBuy().get(i).getbuyprice()));
+      
 
-      if(value!=this.getMap().get(this.getArrBuy().get(i).getbuyprice())){
+      if(value!=this.getArrBuy().get(i)
+      .getquantity()){
+        
         this.lastMarketprice=this.getArrBuy().get(i).getbuyprice();
       }
 
