@@ -1,6 +1,6 @@
 package dice;
 
-import student.subject;
+import student.subjectOfA;
 
 public class player {
 
