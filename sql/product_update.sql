@@ -20,6 +20,7 @@ values(3,'Headphones',79.99,'Wireless headphones with noise-canceling technology
 
 SELECT * FROM product ORDER BY product_name ASC;
 SELECT * FROM product WHERE product_price = (SELECT MAX(product_price) FROM product);
+SELECT max(product_price) FROM product;
 SELECT COUNT(*) AS product_count FROM product;
 SELECT * FROM product where product_name like '%laptop%';
 SELECT AVG(product_price) AS average_price FROM product;
