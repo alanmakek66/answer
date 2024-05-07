@@ -18,8 +18,10 @@ interface Shop {
 
   public static void main(String[] args) {
     Shop s1=new Shop.ChinaCategory();
+    //s1.sellApple().getPrice();
     Apple a1=s1.sellApple();
     System.out.println(a1.getPrice());
+    System.out.println(a1.getOrigin());
     
     
   }
