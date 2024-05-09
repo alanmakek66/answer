@@ -1,0 +1,51 @@
+use sys;
+create table staff(
+id int primary key auto_increment,
+first_name varchar(20),
+last_name varchar(20),
+salary decimal(10,2)
+);
+create table job(
+id int primary key auto_increment,
+job_date date
+);
+insert into staff values(1,'ken','chan',20000);
+insert into staff values(2,'ben','lam',20050);
+insert into staff values(3,'jason','fung',18000);
+insert into staff values(4,'tom','lau',18500);
+insert into staff values(5,'tom','wan',20000);
+insert into staff values(6,'hea','person',5000);
+
+alter table job add staff_id int;
+
+insert into job values(1,'2024-10-10',1);
+insert into job values(2,'2024-10-11',2);
+insert into job values(3,'2024-10-12',2);
+insert into job values(4,'2024-10-13',3);
+insert into job values(5,'2024-10-13',4);
+insert into job values(6,'2024-10-13',4);
+insert into job values(7,'2024-10-15',5);
+insert into job values(8,'2024-10-15',5);
+
+select salary,sum(salary)
+from staff
+group by salary;
+
+select first_name,count(1)
+from staff
+group by first_name;
+
+select s.first_name,s.last_name,s.salary,j.job_date
+from staff s inner join job j on s.id=j.staff_id;
+
+select s.first_name,s.last_name,s.salary,j.job_date,j.id
+from staff s left join job j on s.id=j.staff_id
+where j.id is null;
+
+
+
+
+
+
+
+
