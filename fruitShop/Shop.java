@@ -24,6 +24,7 @@ interface Shop {
     System.out.println(a1.getOrigin());
     
     
+    
   }
   
 }
