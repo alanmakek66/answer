@@ -116,13 +116,29 @@ insert into department values(4,'it','information t department');
 
 select c.id, c.customer_name
 from customer c left join invoice i
-on c.id=i.custiomer_id
+on c.id=i.customer_id
 where i.customer_id is null
 union all
 select p.id, p.product_name
 from product p left join invoice_item ii
 on p.id= ii.product_id
 where ii.product_id is null;
+
+SELECT 'Customer' AS Type, c.id, c.customer_name as name
+FROM customer c
+LEFT JOIN invoice i ON c.id = i.customer_id
+WHERE i.id IS NULL
+UNION
+SELECT 'Product' AS Type, p.id, p.product_name as name
+FROM product p
+LEFT JOIN invoice_item ii ON p.id = ii.product_id
+WHERE ii.id IS NULL;
+
+
+
+
+
+
 
 
 SELECT de.dept_code, COUNT(e.dept_id) AS num_employees
