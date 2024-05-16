@@ -7,14 +7,14 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 
 @TestMethodOrder(MethodOrderer.MethodName.class)
-public class testStudent {
-  private static Student s1;
+public class test2 {
+  private static Student s1=new Student("tom");
 
-  @BeforeAll
+  /* @BeforeAll
   public  static void setup() {
      s1 = new Student("tom");
 
-  }
+  } */
   @Test
   void _01_testaddsubject(){
     Assertions.assertEquals(1, s1.addsubject(Subject.Chinese, 55).size());

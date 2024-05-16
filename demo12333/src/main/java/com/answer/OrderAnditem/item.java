@@ -17,6 +17,7 @@ public class item {
   private String desc;
   private double price;
   @NonNull
+  
   private int quantity;
   
 }
